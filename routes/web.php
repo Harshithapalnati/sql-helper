@@ -15,8 +15,3 @@ Route::get('/', [QueryController::class, 'index'])->name('home');
 Route::post('/query', [QueryController::class, 'process'])->name('query.process');
 
 Route::get('/tables', [QueryController::class, 'tables'])->name('tables.view');
-
-Route::get('/seed-data', function () {
-    \Artisan::call('db:seed', ['--force' => true]);
-    return 'Data seeded!';
-});
