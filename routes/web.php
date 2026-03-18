@@ -15,3 +15,8 @@ Route::get('/', [QueryController::class, 'index'])->name('home');
 Route::post('/query', [QueryController::class, 'process'])->name('query.process');
 
 Route::get('/tables', [QueryController::class, 'tables'])->name('tables.view');
+
+Route::get('/run-migrate', function () {
+    \Artisan::call('migrate', ['--force' => true]);
+    return 'Migration done';
+});
