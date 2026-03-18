@@ -9,7 +9,8 @@ class QueryController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $history = session()->get('history', []);
+        return view('home', compact('history'));
     }
 
     public function process(Request $request)
@@ -17,7 +18,8 @@ class QueryController extends Controller
         $query = $request->input('query');
 
         if (!$query) {
-            return view('home');
+            $history = session()->get('history', []);
+            return view('home', compact('history'));
         }
 
         $queryLower = strtolower($query);

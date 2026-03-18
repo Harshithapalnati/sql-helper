@@ -200,7 +200,7 @@
             </a>
         @else
             <a href="{{ route('home') }}" class="btn btn-outline-secondary">
-                Go bacl
+                Go back
             </a>
         @endif
     </div>
