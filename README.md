@@ -1,8 +1,8 @@
-# SQL Helper – Natural Language to MYSQL Analytics System
+# SQL Helper – Natural Language to MySQL Queries System
 
 ## Overview
 
-This project is a web-based application that allows users to ask business-related questions in simple English and receive results generated using MYSQL queries.
+This project is a web-based application that allows users to ask business-related questions in simple English and receive results generated using MySQL queries.
 
 The system converts natural language input into SQL queries, executes them on a database, and displays the results in a structured format.
 
