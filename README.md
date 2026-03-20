@@ -1,12 +1,18 @@
-# SQL Helper – Natural Language to SQL Analytics System
+# SQL Helper – Natural Language to MYSQL Analytics System
 
 ## Overview
 
-This project is a web-based application that allows users to ask business-related questions in simple English and receive results generated using SQL queries.
+This project is a web-based application that allows users to ask business-related questions in simple English and receive results generated using MYSQL queries.
 
 The system converts natural language input into SQL queries, executes them on a database, and displays the results in a structured format.
 
 This application is built using Laravel and MySQL and is designed to simplify data querying for non-technical users.
+
+---
+
+## Live Demo
+
+[Click here to open the application](https://sql-helper-production.up.railway.app/)
 
 ---
 
@@ -26,10 +32,9 @@ The main purpose of this project is to:
 This system can be useful for:
 
 - Business analysts
-- Managers
 - Non-technical users
 - Beginners learning SQL concepts
-- Anyone who wants quick insights from data without coding
+- Anyone who wants quick insights from data without coding 
 
 ---
 
@@ -42,7 +47,7 @@ This system can be useful for:
   - time range (days)
   - season (summer, winter)
   - actions like count and compare
-- Converts input into SQL queries
+- Converts input into MYSQL queries which can be directly copied and pasted.
 - Displays:
   - Generated SQL
   - Query results in JSON format
@@ -104,3 +109,139 @@ The project uses the following main tables:
 ### Example 1
 
 Input:
+How many skincare products sold in last 20 days
+
+Output:
+- SQL query is generated
+- Total quantity is returned
+
+---
+
+### Example 2
+
+Input:
+Compare skincare and haircare sales
+
+
+Output:
+- Sales for both categories
+- Message showing which performed better
+
+---
+
+## Suggested Queries
+
+Users can also use suggested queries available on the UI:
+
+- How many skincare products sold in last 20 days
+- Compare skincare and haircare sales
+- Moisturiser sales in last 14 days
+
+---
+
+## View Data Feature
+
+The application includes a button:
+
+"View Available Data"
+
+This allows users to:
+- View product data
+- View orders
+- Understand the structure of the database
+
+This helps users form better queries.
+
+---
+
+## Special Logic Implemented
+
+- Synonym mapping:
+  - moisturiser → cream
+  - hair → haircare
+  - skin → skincare
+
+- Flexible query detection:
+  - Works even if user does not use exact keywords
+  - Example:
+    - "hair" works instead of "haircare"
+
+---
+
+## Limitations
+
+- Works only with predefined patterns
+- Does not support very complex queries
+- Requires valid keywords to detect intent
+
+---
+
+## Future Improvements
+
+- Add AI-based NLP for better understanding
+- Support more query types
+- Add charts and visualizations
+- Add user authentication
+- Improve error handling
+- Expand dataset and categories
+
+---
+
+## Setup Instructions (Local)
+
+1. Clone the repository
+
+git clone <your-repo-link>
+
+
+2. Install dependencies
+
+composer install
+
+
+3. Configure `.env`
+- Add database credentials
+
+4. Generate app key
+
+php artisan key:generate
+
+
+5. Run migrations
+
+php artisan migrate
+
+
+6. Start server
+
+php artisan serve
+
+
+---
+
+## Deployment
+
+The project is deployed using Railway.
+
+Note:
+Deployment required proper configuration of:
+- environment variables
+- database connection
+- migrations
+
+---
+
+## Conclusion
+
+This project demonstrates how natural language can be converted into SQL queries to make data access easier.
+
+It shows the integration of:
+- backend logic
+- database querying
+- user-friendly interface
+
+---
+
+## Author
+
+Harshitha
